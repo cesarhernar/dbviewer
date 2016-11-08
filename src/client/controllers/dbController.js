@@ -93,7 +93,7 @@ function dbController($scope, $http, $location, dbService, tableService, $state,
 
         // save the data in table service
         tableService.addTableData(table, response.data);
-      });
+      }).then(()=>{});
   }
   // view a specific table (actual tablename is passed via $stateParams)
   $scope.viewTable = function (table) {
@@ -111,13 +111,8 @@ function dbController($scope, $http, $location, dbService, tableService, $state,
     console.log(data);
     if ($scope.tableData[table] === undefined) {
       $scope.tableData[table] = data;
+      window.location.replace('/#/blog');
     }
+    window.location.replace('/#/tabe');
   }
 }
-
-
-
-
-
-
-
